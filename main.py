@@ -16,7 +16,7 @@ class CalculatorApp(App):
             ['1', '2', '3', '-'],
             ['.', '0', '=', '+'],
             ['sqrt', '(', ')', '^2'],
-            ['<--']
+            ['Ce']
         ]
 
         for row in buttons:
@@ -43,7 +43,7 @@ class CalculatorApp(App):
                 self.expression.text = result
             except ValueError:
                 self.expression.text = "Error"
-        elif instance.text == '<--':
+        elif instance.text == 'Ce':
             self.expression.text = current_text[:-1]
         else:
             self.expression.text = current_text + instance.text
