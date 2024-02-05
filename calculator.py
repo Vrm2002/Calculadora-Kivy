@@ -61,8 +61,6 @@ class Calculator(Screen):
            value = self.ids.txtinput.text
            new_value = math.radians(int(value))
            self.ids.txtinput.text = str(new_value)
-           two_value = math.sqrt(float(value)) 
-           self.ids.txtinput.text = str(two_value)
        except:
           self.ids.txtinput.text = 'Error' 
 
@@ -89,5 +87,14 @@ class Calculator(Screen):
 
     def pi(self):
         self.ids.txtinput.text = self.ids.txtinput.text + str((math.pi))
+
+    def raiz(self):
+        try:
+           value = self.ids.txtinput.text
+           new_value = math.sqrt(float(value))
+           self.ids.txtinput.text = str(new_value)
+        except:
+          self.ids.txtinput.text = 'Error' 
+
 
     
