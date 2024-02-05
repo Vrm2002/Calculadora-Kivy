@@ -3,8 +3,6 @@ from kivy.core.window import Window
 from calculator import Calculator
 
 
-Window.size = (280,480)
-
 
 class MainApp(App):
 
