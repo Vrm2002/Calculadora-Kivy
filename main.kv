@@ -1,45 +1,41 @@
 
-
 <Calculator>:
 	txtinput:txtinput
 	BoxLayout:
-		canvas:
-			
-			Rectangle:
-				size: self.size
-				pos: self.pos
 		orientation: 'vertical'
 		BoxLayout:
 			size_hint_y: 0.2
 			Label:
-				text: 'Scientific Calculator ' 
+				text: 'Calculadora Diego, Evandro,Gravena e Vinicius ' 
 				text_size: self.size
 				italic: True
-				
+				color: 0,1,0
 				bold: True
 			Label:
 				size_hint_x: 0.3
-				text: 'ver0.0'
+				text: 'ver 1.0'
 				text_size: self.size
 				italic: True
-				
+				color: 0,0,1
 				bold: True
 
 			
 
 		BoxLayout:
+			canvas:
+				Color:
+					rgb: 1,1,1
+				Rectangle:
+					size: self.size
+					pos: self.pos
+			padding: [0, 0, 0, 0]
+			size_hint_y: 0.5
 			TextInput:
 				id: txtinput
 				hint_text: '0.0'
 				font_size: 50
 				readonly: True
 		GridLayout:
-			canvas:
-				Color:
-					rgb: 1,0,0
-				Rectangle:
-					size: self.size
-					pos: self.pos
 			rows:3
 			cols: 4
 			Button:
@@ -51,6 +47,10 @@
 			Button:
 				text: '%'
 				on_release: root.percentage()
+			ToggleButton:
+				text: 'raiz'
+				group: 'rad-sqrt'
+				on_release: root.raiz()
 			Button:
 				text: 'pi'
 				on_release: root.pi()
@@ -67,18 +67,7 @@
 				group: 'rad-deg'
 				on_release: root.deg()
 
-			ToggleButton:
-				text: 'raiz'
-				group: 'rad-sqrt'
-				on_release: root.raiz()
-
 		GridLayout:
-			canvas:
-				Color:
-					rgb: 1,0,0
-				Rectangle:
-					size: self.size
-					pos: self.pos
 			cols: 4
 			rows: 3
 			Button:
@@ -118,14 +107,6 @@
 				text: '-'
 				on_release: root.txtinput.text += '-'
 		BoxLayout:
-		
-			canvas:
-				Color:
-					rgb: 1,0,0
-				Rectangle:
-					size: self.size
-					pos: self.pos
-					
 			GridLayout:
 				rows: 2
 				size_hint_x: 0.75
@@ -137,10 +118,16 @@
 					Button:
 						text: '0'
 						on_release: root.txtinput.text += '0'
-					Button:
-						text: '+/-'
-						on_release: root.add_sub()
-					
+					BoxLayout:
+						Button:
+							text: '('
+							on_release: root.txtinput.text += '('
+						Button:
+							text: ')'
+							on_release: root.txtinput.text += ')'
+				Button:
+					text: '='
+					on_release: root.calculate()
 
 				
 			BoxLayout:
@@ -149,9 +136,5 @@
 				Button:
 					text: '+'
 					on_release: root.txtinput.text += '+'
-
-				Button:
-					text: '='
-					on_release: root.calculate()
 				
 				
