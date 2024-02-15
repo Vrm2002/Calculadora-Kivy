@@ -52,6 +52,7 @@
 				group: 'rad-sqrt'
 				on_release: root.raiz()
 
+
 			Button:
 				text: 'pi'
 				on_release: root.pi()
@@ -64,6 +65,11 @@
 				text: 'Rad'
 				group: 'rad-deg'
 				on_release: root.rad()
+
+			Button:
+				background_color: (0.5, 0.5, 1, 1)
+				text: '+'
+				on_release: root.txtinput.text += '+'
 
 		GridLayout:
 			cols: 4
@@ -83,8 +89,11 @@
 
 			Button:
 				background_color: (0.5, 0.5, 1, 1)
-				text: '/'
-				on_release: root.txtinput.text += '/'
+				text: '-'
+				on_release: root.txtinput.text += '-'
+
+			
+			
 
 			Button:
 				text: '4'
@@ -114,11 +123,12 @@
 			Button:
 				text: '3'
 				on_release: root.txtinput.text += '3'
-
+			
 			Button:
 				background_color: (0.5, 0.5, 1, 1)
-				text: '-'
-				on_release: root.txtinput.text += '-'
+				text: '/'
+				on_release: root.txtinput.text += '/'
+
 
 		BoxLayout:
 			GridLayout:
@@ -148,14 +158,12 @@
 
 
 
+
 				
 			BoxLayout:
 				size_hint_x: 0.25
 				orientation: 'vertical'
-				Button:
-					background_color: (0.5, 0.5, 1, 1)
-					text: '+'
-					on_release: root.txtinput.text += '+'
+				
 				
 				Button:
 					background_color: (0.5, 0.5, 1, 1)
