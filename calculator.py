@@ -64,13 +64,6 @@ class Calculator(Screen):
        except:
           self.ids.txtinput.text = 'Error' 
 
-    def deg(self):
-        try:
-           value = self.ids.txtinput.text
-           new_value = math.degrees(int(value))
-           self.ids.txtinput.text = str(new_value)
-        except:
-          self.ids.txtinput.text = 'Error' 
        
     def dot(self):
 
