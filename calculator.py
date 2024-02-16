@@ -24,38 +24,8 @@ class Calculator(Screen):
             self.ids.txtinput.text = str(eval(per))
         except:
             self.ids.txtinput.text = 'Error'
-            
-    def add_sub(self):
-        value = self.ids.txtinput.text
-        try:
-            if value == '':
-                pass
-            elif value[0] == '-':
-                if value[-1] == '-':
-                    self.ids.txtinput.text = str(eval(value+'0'))+'+' # -2-
-                    
-                elif value[-1] == '+':
-                    self.ids.txtinput.text = str(eval(value+'0'))+'-' # -2+
-                elif int(value[-1]) >= 0:
-                    self.ids.txtinput.text = str(eval(value +'*(-1)')) # -2
 
-            elif value[0] == '+':
-                if value[-1] == '-':
-                    self.ids.txtinput.text = str(eval(value+'0'))+'+' # +2-
-                elif value[-1] == '+':
-                    self.ids.txtinput.text = str(eval(value+'0'))+'-' # +2+
-                elif int(value[-1]) >= 0:
-                    self.ids.txtinput.text = str(eval(value +'*(-1)')) # +2
-             
-            elif int(value[0]) >= 0:
-                if value[-1] == '-':
-                    self.ids.txtinput.text = str(eval(value+'0'))+'+' # 2-
-                elif value[-1] == '+':
-                    self.ids.txtinput.text = str(eval(value+'0'))+'-' # 2+
-                elif int(value[0]) > 0:
-                    self.ids.txtinput.text = str(eval(value +'*(-1)')) # 2
-        except:
-            self.ids.txtinput.text = 'Error'
+    
             
     def rad(self):
        try:
