@@ -7,7 +7,7 @@ class Calculator(Screen):
         calc_entry = self.ids.txtinput.text
         if calc_entry !='':
             try:
-                if calc_entry[0] in '1234567890()':
+                if calc_entry[0] in '1234567890()-+':
                     self.ids.txtinput.text = str(eval(calc_entry))
             except:
                 self.ids.txtinput.text = 'Error'
@@ -24,6 +24,7 @@ class Calculator(Screen):
             self.ids.txtinput.text = str(eval(per))
         except:
             self.ids.txtinput.text = 'Error'
+            
     def add_sub(self):
         value = self.ids.txtinput.text
         try:
